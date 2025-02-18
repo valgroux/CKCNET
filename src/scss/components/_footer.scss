@@ -1,0 +1,221 @@
+// STYLE DU FOOTER
+
+.footer{
+    padding: 5rem 0;
+
+    &__container{
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        
+        &__item{
+
+            &:nth-child(1){
+                display: flex;
+                flex-direction: column;
+                gap: 1.9rem;
+                width: 49rem;
+            }
+            
+            &:nth-child(4){
+                width: 36.8rem;
+
+                button{
+                margin-top: 2.8rem;
+                width: 100%;
+                }
+            }
+            
+            &:last-child{
+                width: 100%;
+            }
+            &__logo{
+                width: 27.7rem;
+                height: 5.47rem;
+                background-image: url('/src/svg/logo.svg');
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+                
+            }
+
+            &__copyright{
+                font-size: 1.5rem;
+            }
+
+            &__social{
+                margin-top: 3.2em;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                
+                &__links{
+                    display: flex;
+                    gap: 2.2rem;
+                    margin-top: 1.2rem;
+                    
+                    &__icon{
+                        width: 3.2rem;
+                        height: 3.2rem;
+                        background-position: center;
+                        background-size: contain;
+                        background-repeat: no-repeat;
+
+                        &--insta{
+                            background-image: url('/src/svg/icon_instagram.svg');
+                        }
+                        &--facebook{
+                            background-image: url('/src/svg/icon_facebook.svg');
+                        }
+
+                        &--youtube{
+                            background-image: url('/src/svg/icon_youtube.svg');
+                        }
+                    }
+                }
+            }
+        }
+
+        &__item .h3{
+            color:$pink;
+            font-weight: 400;
+        }
+
+        &__item a{
+            color:$blue;
+            display: table;
+            transition: .2s ease-in-out;
+            &:hover{
+                color:$pink;
+            }
+        }
+
+        &__item button{
+            margin-bottom: 4.8rem;
+        }
+        
+    }
+}
+
+
+/* ============================
+FOOTER RESPONSIVE 
+============================ */
+
+// 1730
+@media only screen and (max-width: 1730px) {
+    .footer{
+        &__container{
+            gap:2.4rem;
+
+            &__item:nth-child(4){
+                width: 20%;
+            }
+        }
+    }
+}
+
+// 1200
+@media only screen and (max-width: 1200px) {
+    .footer{
+        &__container{
+            &__item:first-child{
+                width: 30%;
+            }
+        }
+    }
+}
+
+// 1100
+@media only screen and (max-width: 1100px) {
+    .footer{
+        &__container{
+            gap: 0;
+            &__item{
+                width: calc((100%/3) - (2.4rem/3))
+            }
+            &__item:nth-child(4){
+                margin-top: 2.4rem;
+                width: 100%;
+                text-align: center;
+                button{
+                    width: 50%;
+                }
+            }
+
+            &__item:nth-child(2) p,
+            &__item:nth-child(3) p,
+            &__item:nth-child(2) a,
+            &__item:nth-child(3) a{
+                text-align: center;
+                width: 100%;
+            }
+        }
+    }
+}
+
+
+// 850
+@media only screen and (max-width: 850px) {
+    .footer{
+        &__container{
+            &__item:first-child{
+                width: 100%;
+                margin-bottom: 4rem;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            &__item:nth-child(2),
+            &__item:nth-child(3){
+                width: 50%;
+            }
+            &__item:nth-child(4){
+                width: 100%
+            }
+        }
+    }
+}
+
+
+// 770
+@media only screen and (max-width: 770px) {
+    .footer{
+        &__container{
+            &__item:nth-child(4){
+                margin: 4rem 0;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    }
+}
+
+// 480
+@media only screen and (max-width: 480px) {
+    .footer{
+        &__container{
+            &__item:nth-child(2),
+            &__item:nth-child(3){
+                margin: 1.6rem 0;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            &__item:first-child p{
+                text-align: center;
+            }
+
+            &__item:nth-child(4) button{
+                width: 100%;
+            }
+        }
+
+    }
+}

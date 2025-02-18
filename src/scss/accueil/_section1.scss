@@ -1,0 +1,28 @@
+.section1{
+    background-color: $pink;
+    padding:4rem 0;
+
+    &__title .h2,
+    &__text p{
+        text-align: center;
+    }
+
+    &__title{
+        margin-bottom: .8rem;
+    }
+}
+
+/* ============================
+SECTION 1 RESPONSIVE 
+============================ */
+
+
+// 765px
+@media only screen and (max-width: 765px) {
+    .section1{
+        &__title .h2,
+        &__text p{
+            text-align: left;
+        }
+    }
+}

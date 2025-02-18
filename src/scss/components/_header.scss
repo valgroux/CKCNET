@@ -1,0 +1,152 @@
+// STYLE DU HEADER
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1;
+    position: relative;
+
+    &__left a, img{
+        display: block;
+        width: 29.1rem;
+    }
+
+    &__center ul{
+        display: flex;
+        gap:4rem;
+        align-items: center;
+
+        li a{
+            position: relative;
+            padding: .8rem;
+            font-size: 1.5rem;
+            line-height: 2.25rem;
+            font-weight: 500;
+            color:$white;
+            text-transform: uppercase;
+            &::after{
+                position: absolute;
+                content:'';
+                height: 2px;
+                width: 40%;
+                background-color: $white;
+                bottom: 0;
+                left: 50%;
+                transform: scaleX(0);
+                transform-origin: center;
+                transition: transform 0.3s ease-out;
+            }
+            &:hover::after {
+                transform: scaleX(1) translateX(-50%);
+            }
+        }
+    }
+
+    &__right{
+        display: flex;
+        gap:3.2rem;
+    }
+
+    &__burger{
+        display: none;
+        padding: .8rem 1.6rem;
+        border: 1px solid $white;
+        border-radius: 5rem;
+        align-items: center;
+        gap:1.6rem;
+        transition: .3s;
+        cursor: pointer;
+        &:hover{
+            background-color: $white;
+            border-color: $black;
+            &__text{
+                color:$black;
+            }
+            &__icon{
+                background-image: url('/src/svg/icon_burger_black.svg');
+            }
+        }
+
+        &__text{
+            color:$white;
+            text-transform: uppercase;
+        }
+
+        &__icon{
+            width: 4rem;
+            height: 4rem;
+            background-image: url('/src/svg/icon_burger_white.svg');
+            background-size: cover;
+        }
+    }
+}
+
+
+/* ============================
+HEADER RESPONSIVE 
+============================ */
+
+// 1600px
+@media only screen and (max-width: 1600px) {
+    .header{
+        &__center ul{
+            gap:1.6rem;
+        }
+    }
+}
+
+// 1490px
+@media only screen and (max-width: 1490px) {
+    .header{
+        &__left img,
+        &__left a {
+            width: 20rem;
+        }
+    }
+}
+
+
+// 1400px
+@media only screen and (max-width: 1400px) {
+    .header{
+        &__right{
+            gap: 1.6rem;
+        }
+    }
+}
+
+// 1400px
+@media only screen and (max-width: 1400px) {
+    .header{
+        &__center,
+        &__right{
+            display: none;
+        }
+        &__burger{
+            display: flex;
+        }
+    }
+}
+
+
+// 460px
+@media only screen and (max-width: 460px) {
+    .header__left img {
+        content: url('src/svg/logo_small.svg');
+        max-width: 10rem;
+        height: auto;
+    }
+}
+
+// 380px
+@media only screen and (max-width: 380px) {
+    .header__left img {
+        content: url('src/svg/logo_small.svg');
+        max-width: 8rem;
+        height: auto;
+    }
+    .header__left a{
+        max-width: 8rem;
+    }
+}

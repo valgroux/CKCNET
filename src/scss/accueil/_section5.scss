@@ -1,0 +1,230 @@
+.section5{
+    padding: 6.4rem 0;
+    position: relative;
+    background-color: $grey-3;
+    overflow: hidden;
+
+    &__container{
+        position: relative;
+        overflow: hidden;
+        &__bloc{
+            padding: 13rem 0;
+            width: 40%;
+
+            &__arrows{
+                display: flex;
+                align-items: center;
+                gap: 5rem;
+                margin-top: 3rem;
+
+                &--left,
+                &--right {
+                    width: 6.5rem;
+                    height: 6.5rem;
+                    background-color: $white;
+                    box-shadow: 0rem .7rem 4rem 0 rgba($black, 0.1);
+                    background-image: url('/src/svg/icon_arrow_left.svg');
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    transition: .3s;
+                    cursor: pointer;
+
+                        &:hover {
+                        box-shadow: 0rem .7rem 4rem 0 rgba($pink, 0.25);
+                        border-radius: .8rem;
+                    }
+                }
+
+                &--right {
+                    rotate: 180deg;
+                    &:hover{
+                        rotate: 170deg;
+                    }
+                }
+
+                &--left{
+                    &:hover{
+                        rotate: 10deg;
+                    }
+                }
+            }
+
+            .h2{
+                color:$blue;
+            }
+        }
+
+        &__cards{
+            overflow: hidden;
+            position:absolute;
+            height: 100%;
+            width: 60%;
+            top: 50%;
+            transform: translateY(-50%);
+            right:0;
+    
+            .swiper-slide{
+                width: 92rem;
+                height: 100%;
+            }
+    
+            &__item{
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+                padding:3rem;
+                box-sizing: border-box;
+                height: 100%;
+                
+                &::after{
+                    position: absolute;
+                    content:'';
+                    height: 60%;
+                    width: 100%;
+                    left: 0;
+                    bottom:0;
+                    z-index: 0;
+                    background: linear-gradient(180deg, rgba($black, 0) 0%, rgba($blue, 0.5) 50%);
+                }
+    
+                &--1{
+                    background-image: url('/src/img/yacht_noir_blanc.webp');
+                }
+    
+                &--2{
+                    background-image: url('/src/img/bateau_croisiere_mer.webp');
+                }
+    
+                &--3{
+                    background-image: url('/src/img/yacht_blanc.webp');
+                }
+    
+                &__content{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-end;
+                    height: 100%;
+                    z-index: 1;
+                    position: relative;
+                }
+    
+                &__content span{
+                    color:$pink;
+                }
+    
+                &__content p:last-child{
+                    margin-top: 1.2rem;
+                }
+                
+            }
+        }
+    }
+}
+
+
+/* ============================
+SECTION 5 RESPONSIVE 
+============================ */
+
+
+// 1450
+@media only screen and (max-width: 1450px) {
+    .section5{
+        &__container{
+            &__bloc{
+                width: 50%;
+            }
+            &__cards{
+                width: 50%;
+                .swiper-slide{
+                    width: 40rem;
+                }
+            }
+        }
+    }
+}
+
+// 1060
+@media only screen and (max-width: 1060px) {
+    .section5{
+        &__container{
+            &__bloc{
+                width: 40%;
+            }
+            &__cards{
+                height: 70%;
+                .swiper-slide{
+                    width: 32rem;
+                }
+            }
+        }
+    }
+}
+
+// 670
+@media only screen and (max-width: 670px) {
+    .section5{
+        height: 100%;
+        padding: 8rem 0;
+
+        &__container{
+            width: 100%;
+            margin-bottom: 4rem;
+            &__bloc{
+                width: 100%;
+                padding: 0;
+            }
+
+            &__cards{
+                position: relative;
+                width: 100%;
+                transform: none;
+                height: 40rem;
+                margin-left: 4rem;
+                margin-top: 4rem;
+    
+                &__item{
+                    padding: 1.6rem;
+                }
+            }
+        }
+    }
+}
+
+// 400
+@media only screen and (max-width: 400px) {
+    .section5{
+        &__container{
+            &__cards{
+                &__item{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+//375
+@media only screen and (max-width: 380px) {
+    .section5{
+        &__container{
+            &__cards{
+                margin-left: 0;
+                &__item{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+// // 345
+// @media only screen and (max-width: 345px) {
+//     .section5{
+//         &__container{
+//             &__cards{
+//                 margin-left: 0;
+//             }
+//         }
+//     }
+// }

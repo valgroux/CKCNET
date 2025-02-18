@@ -1,0 +1,316 @@
+.masthead {
+    position: relative;
+    background-image: url('/src/img/bateau_plan_eau.webp');
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 81rem;
+    padding-top: 3.5rem;
+    z-index: 1; 
+
+    &__content {
+        position: relative;
+        z-index: 2;
+        margin-top: 14.7rem;
+
+        &__title{
+            position: relative;
+            .text-wrapper{
+                position: relative;
+                display: inline-block;
+                padding-top: 0.2em;
+                padding-right: 0.05em;
+                padding-bottom: 0.1em;
+                overflow: hidden;
+            }
+            .letter{
+                display: inline-block;
+                line-height: 1em;
+            }
+        }
+        
+        &__tablinks {
+            display: flex;
+            margin-top: 2.5rem;
+            &__button {
+                padding: 1rem 4rem;
+                background-color: $grey;
+                border: none;
+                cursor: pointer;
+                transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+                font-size: 1.4rem;
+                text-transform: uppercase;
+                transform-origin: left;;
+
+                &.active {
+                    background-color: $pink;
+                    color: $white;
+                }
+
+                &:hover {
+                    background-color: lighten($pink, 10%);
+                    color:$white;
+                }
+            }
+        }
+
+        &__tabcontent {
+            display: none;
+            padding: 1.6rem 4rem;
+            background-color: $white;
+
+            &.active {
+                display: block;
+            }
+
+            &__blocs {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 2.4rem;
+
+                p, label {
+                    font-size: 1.4rem;
+                    font-weight: 700;
+                }
+
+                &__item {
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-items: flex-start;
+                    justify-content: space-between;
+                    gap: .45rem;
+
+                    &:nth-child(1) {
+                        width: 20rem;
+                    }
+                    
+                    &--195, &--200 {
+                        width: 19.5rem;
+                    }
+
+                    &.dragging {
+                        cursor: ew-resize;
+                    }
+
+                    & > input {
+                        border: none;
+                        outline: none;
+                        font-size: 1.6rem;
+                        border-radius: 5px;
+                        font-weight: 500;
+                        color: $blue;
+                        padding: 0;
+                        position: absolute;
+                        opacity: 0;
+                    }
+
+                    &__rectangle {
+                        width: 100%;
+                        height: 4rem;
+                        background-color: $grey;
+                    }
+
+                    &__range {
+                        width: 100%;
+                        display: grid;
+                        position: relative;
+                        z-index: 5;
+
+                        & > input {
+                            grid-row: 2;
+                            grid-column: 1;
+                            pointer-events: none;
+                            appearance: none;
+                            background: transparent;
+                        }
+
+                        & > input::-webkit-slider-thumb {
+                            pointer-events: auto;
+                            appearance: none;
+                            width: 1.6rem;
+                            height: 1.6rem;
+                            background: $pink;
+                            border-radius: 50%;
+                            border: 2px solid $white;
+                            cursor: pointer;
+                        }
+
+                        &__slider {
+                            position: absolute;
+                            height: 0.2rem;
+                            width: 100%;
+                            background: $grey-2;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            border-radius: 5px;
+                            overflow: hidden;
+                            z-index: -1;
+
+                            &__progress {
+                                position: absolute;
+                                height: 100%;
+                                background: $pink;
+                                cursor: ew-resize;
+                            }
+                        }
+                    }
+
+                    &__max-price {
+                        text-align: right;
+                    }
+
+                    &__value {
+                        visibility: visible;
+                        display: inline-block;
+                        margin-left: 0.5rem;
+                        font-size: 1.6rem;
+                        position: relative;
+                        z-index: 1;
+                    }
+                }
+
+                .formatted-value{
+                    font-size: 1.2rem;
+                    font-weight: 500;
+                    color: $blue;
+                }
+            }
+        }
+    }
+}
+
+
+
+/* ============================
+MASTHEAD RESPONSIVE 
+============================ */
+
+
+// 1600px
+@media only screen and (max-width: 1600px) {
+    .masthead{
+        .header{
+            &__center ul{
+                gap:1.6rem;
+            }
+        }
+    }
+}
+
+
+// 1490px
+@media only screen and (max-width: 1490px) {
+    .masthead{
+        .header{
+            &__left img,
+            &__left a {
+                width: 20rem;
+            }
+        }
+    }
+}
+
+
+// 1400px
+@media only screen and (max-width: 1400px) {
+    .masthead{
+        .header{
+            &__right{
+                gap: 4rem;
+            }
+        }
+    }
+}
+
+// 800px
+@media only screen and (max-width: 800px) {
+    .masthead{
+        height: auto;
+        padding-bottom: 12rem;
+        &__content{
+            margin-top: 8rem;
+            &__tabcontent{
+                &__blocs{
+                    gap: 4rem;
+                    flex-wrap: wrap;
+                    &__item{
+                        width: calc(50% - 2rem);
+                        &:last-child{
+                            width: 100%;
+                            display: flex;
+                            justify-content: center;
+                            margin-top: 1.6rem;
+                        }
+                    }
+                    
+                }
+            }
+            &__tablinks{
+                &__button{
+                    width: calc(100% / 3);
+                    padding: 1.6rem 4rem;
+                }
+            }
+        }
+    }
+}
+
+// 570px
+@media only screen and (max-width: 570px) {
+    .masthead{
+        height: auto;
+        padding-bottom: 8rem;
+        &__content{
+            margin-top: 5.6rem;
+            &__tabcontent{
+                border: .1rem solid $grey-2;
+                &__blocs{
+                    gap: 1.6rem;
+                    flex-wrap: wrap;
+                    &__item{
+                        width: calc(100% - 1.6rem);
+                        &:last-child{
+                            width: 100%;
+                            display: flex;
+                            justify-content: center;
+                            margin-top: 2.4rem;
+                        }
+                    }
+                    
+                }
+            }
+
+            &__tablinks{
+                flex-wrap: wrap;
+                
+                &__button{
+                    width: 100%;
+                    border-bottom: 1px solid $grey-2;
+                    &:last-child{
+                        border-bottom: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 450px
+@media only screen and (max-width: 450px) {
+    .masthead{
+        &__content{
+            &__tabcontent{
+                padding: 1.6rem 2.4rem;
+                &__blocs{
+                    gap: 2.4rem;
+                }
+            }
+            &__tablinks{
+                &__button{
+                    padding: 2.4rem 1.6rem;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,43 @@
+.section7{
+    margin-bottom: 6.7rem;
+
+    &__container{
+        padding: 10rem 4rem;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+        background-image: url('/src/img/bateau_blanc_bleu.webp');
+        background-size: cover;
+        background-position: center;
+    }
+
+    &__container button{
+        margin: 0 auto;
+    }
+}
+
+
+/* ============================
+SECTION 7 RESPONSIVE 
+============================ */
+
+
+// 910
+@media only screen and (max-width: 910px) {
+    .section7{
+        &__container{
+            gap: 4rem;
+        }
+    }
+}
+
+
+// 425
+@media only screen and (max-width: 425px) {
+    .section7{
+        &__container{
+            padding: 4rem;
+        }
+    }
+}

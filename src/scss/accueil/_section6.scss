@@ -1,0 +1,123 @@
+.section6{
+    background-color: $grey-3;
+    padding: 6.4rem 0;
+    margin-bottom: 6.4rem;
+
+    &__container{
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14rem;
+
+        &__texts{
+            width: calc(30% - 7rem);
+            display: flex;
+            flex-direction: column;
+            gap: .8rem;
+
+            .h2{
+                color:$blue;
+            }
+        }
+    
+        &__articles{
+            width: calc(70% - 7rem);
+            display: flex;
+            gap: 3rem;
+
+            &__item{
+                width: calc(50% - 1.5rem);
+                height: 43rem;
+                background-color: $white;
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                background-position: center;
+                background-size: cover;
+                position: relative;
+
+                &::after{
+                    position: absolute;
+                    content:'';
+                    height: 60%;
+                    width: 100%;
+                    left: 0;
+                    bottom:0;
+                    z-index: 0;
+                    background: linear-gradient(180deg, rgba($black, 0) 0%, rgba($blue, 0.5) 50%);
+                }
+
+                &--1{
+                    background-image: url('/src/img/homme_bateau_mer.webp');
+                }
+
+                &--2{
+                    background-image: url('/src/img/bateaux_blancs_ocean.webp');
+                }
+                
+                &__content{
+                    padding: 0 0 2rem 3rem;
+                    z-index: 1;
+                }
+            }
+        }
+
+    }
+}
+
+
+/* ============================
+SECTION 6 RESPONSIVE 
+============================ */
+
+// 1080
+@media only screen and (max-width: 1840px) {
+    .section6{
+        &__container{
+            gap: 4rem;
+
+            &__texts{
+                width: calc(40% - 2rem);
+            }
+
+            &__articles{
+                width: calc(60% - 2rem);
+            }
+        }
+    }
+}
+
+// 850
+@media only screen and (max-width: 850px) {
+    .section6{
+        &__container{
+            flex-wrap: wrap;
+
+            &__texts,
+            &__articles{
+                width: 100%;
+            }
+
+            &__texts div{
+                display: inline;
+            }
+        }
+    }
+}
+
+// 565px
+@media only screen and (max-width: 565px) {
+    .section6{
+        &__container{
+            &__articles{
+                flex-wrap: wrap;
+                &__item{
+                    width: 100%;
+                    height: 24rem;
+                }
+            }
+        }
+    }
+}
