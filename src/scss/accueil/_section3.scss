@@ -1,0 +1,89 @@
+.section3{
+    padding: 8rem 0;
+    background-color: $white;
+    
+    &__container{
+        display: flex;
+        flex-wrap: wrap;
+        gap:4rem;
+
+        &__subtitle{
+            text-align: center;
+            color:$blue;
+        }
+
+        &__blocs{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60%;
+            margin: auto;
+            gap: 8rem;
+
+            &__item{
+                text-align: center;
+                width: calc(100% / 4 + 2rem);
+
+                &__number{
+                    font-size: 8rem;
+                    color:$pink;
+                    line-height: 12rem;
+                    margin-bottom: -3rem;
+                }
+
+                &__text{
+                    color:$pink;
+                }
+            }
+        }
+    }
+}
+
+
+/* ============================
+SECTION 3 RESPONSIVE 
+============================ */
+
+
+// 920
+@media only screen and (max-width: 920px) {
+    .section3{
+        &__container{
+            &__blocs{
+                gap: 4rem;
+            }
+        }
+    }
+}
+
+// 760
+@media only screen and (max-width: 760px) {
+    .section3{
+        &__container{
+            &__subtitle{
+                text-align: left;
+            }
+            &__blocs{
+                &__item{
+                    &__number{
+                        font-size: 5.6rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 640
+@media only screen and (max-width: 640px) {
+    .section3{
+        &__container{
+            &__blocs{
+                flex-wrap: wrap;
+                &__item{
+                    width: calc(50% - 2rem)
+                }
+            }
+        }
+    }
+}

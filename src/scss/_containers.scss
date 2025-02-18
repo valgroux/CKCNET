@@ -1,0 +1,94 @@
+// STYLE CONTAINER
+
+.container--1640 {
+    max-width: 164rem;
+    padding: 0 14rem;
+    margin: 0 auto;
+    // width: 100%;
+}
+
+.container--1082{
+    max-width: 108.2rem;
+    padding: 0 41.9rem;
+    margin: 0 auto;
+    // width: 100%;
+}
+
+
+/* ============================
+CONTAINER 1680px RESPONSIVE 
+============================ */
+
+// 1600px
+@media only screen and (max-width: 1600px) {
+    .container--1640{
+        max-width: 160rem;
+        padding: 0 8rem;
+    }
+}
+
+// 1300px
+@media only screen and (max-width: 1300px) {
+    .container--1640{
+        max-width: 130rem;
+        padding: 0 4rem;
+    }
+}
+
+// 375px
+@media only screen and (max-width: 375px) {
+    .container--1640{
+        max-width: 130rem;
+        padding: 0 2.4rem;
+    }
+}
+
+
+/* ============================
+CONTAINER 1082px RESPONSIVE 
+============================ */
+
+// 1600px
+@media only screen and (max-width: 1600px) {
+    .container--1082{
+        max-width: 108.2rem;
+        padding: 0 24rem;
+        margin: 0 auto;
+    }
+}
+
+// 1250px
+@media only screen and (max-width: 1600px) {
+    .container--1082{
+        max-width: 108.2rem;
+        padding: 0 16rem;
+        margin: 0 auto;
+    }
+}
+
+// 1090px
+@media only screen and (max-width: 1090px) {
+    .container--1082{
+        max-width: 108.2rem;
+        padding: 0 8rem;
+        margin: 0 auto;
+    }
+}
+
+// 860px
+@media only screen and (max-width: 860px) {
+    .container--1082{
+        max-width: 108.2rem;
+        padding: 0 4rem;
+        margin: 0 auto;
+    }
+}
+
+// 770px
+@media only screen and (max-width: 860px) {
+    .container--1082{
+        max-width: 108.2rem;
+        padding: 0 2.4rem;
+        margin: 0 auto;
+    }
+}
